@@ -29,4 +29,22 @@ function fizzBuzz(n) {
   }
 }
 
-module.exports = fizzBuzz;
+function fizzbuzzRec(n, cnt = 1) {
+  var fizz = '';
+
+  if (cnt % 3 === 0) {
+    fizz += 'fizz';
+  }
+  if (cnt % 5 === 0) {
+      fizz += 'buzz';
+  }
+
+  console.log(!fizz ? cnt : fizz);
+
+  if (cnt < n) {
+    cnt = cnt + 1;
+    fizzbuzzRec(n,cnt);
+  }
+}
+
+module.exports = fizzbuzzRec;
