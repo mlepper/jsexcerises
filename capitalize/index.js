@@ -34,8 +34,7 @@ function capitalize(str) {
 
 function cap4(str) {
   return str.replace(/(\w)+/g, match => {
-    const m = match.split("");
-    return m[0].toUpperCase() + match.substring(1);
+    return match[0].toUpperCase() + match.substring(1);
   });
 }
 
