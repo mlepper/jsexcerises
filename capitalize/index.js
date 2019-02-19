@@ -17,17 +17,26 @@ function capitalize(str) {
   return capitalized.trim();
 }
 
-function cap2(str) {
-  return str.replace(/(\w)+/g, (match, s) => {
-    var x = arguments;
-    return match[0].toUpperCase() + match.split("").slice(1).join("");
-  })
+// overcomplicated
+// function cap2(str) {
+//   return str.replace(/(\w)+/g, (match, s) => {
+//     var x = arguments;
+//     return match[0].toUpperCase() + match.split("").slice(1).join("");
+//   })
+// }
+
+// function cap3(str) {
+//   return str.replace(/(\w)+/g, (match) => {
+//     const m = match.split("");
+//     return [m[0].toUpperCase(), ...match.slice(1)].join("");
+//   })
+// }
+
+function cap4(str) {
+  return str.replace(/(\w)+/g, match => {
+    const m = match.split("");
+    return m[0].toUpperCase() + match.substring(1);
+  });
 }
 
-function cap3(str) {
-  return str.replace(/(\w)+/g, (match) => {
-    const m = match.split("");
-    return [m[0].toUpperCase(), ...match.slice(1)].join("");
-  })
-}
-module.exports = cap3;
+module.exports = cap4;
